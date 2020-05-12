@@ -12,9 +12,9 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace course_project
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
         }
@@ -41,13 +41,16 @@ namespace course_project
         {
             String login = this.login_edt.Text;
             String password = this.pwd_edt.Text;
-            String fetched_password = get_password(login);
+            String fetched_password = "aaa"; // get_password(login);
             if (password == fetched_password)
             {
                 Console.WriteLine("FINE");
             } else
             {
-                // TODO: add Form for incorrect password
+                DialogResult result = MessageBox.Show(
+                        "There's no user with this login.\nWould you like to sign up?",
+                        "Sign up?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                // DialogResult result = MessageBox.Show("Invalid password", "Invalid password", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -68,7 +71,9 @@ namespace course_project
                     password = reader.GetString(0);
                 } else
                 {
-                    // TODO: add Form for user inexistance suggesting to sign up
+                    DialogResult result = MessageBox.Show(
+                        "There's no user with this login.\nWould you like to sign up?",
+                        "Sign up?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
             }
             return password;
