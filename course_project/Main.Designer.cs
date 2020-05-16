@@ -93,6 +93,7 @@ namespace course_project
             this.signup_lnk.TabStop = true;
             this.signup_lnk.Text = "Sign Up!";
             this.signup_lnk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.signup_lnk.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.signup_lnk_LinkClicked);
             // 
             // signup_suggestion_lbl
             // 
@@ -103,7 +104,7 @@ namespace course_project
             this.signup_suggestion_lbl.TabIndex = 9;
             this.signup_suggestion_lbl.Text = "New here?";
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,7 +118,7 @@ namespace course_project
             this.Controls.Add(this.login_btn);
             this.MaximumSize = new System.Drawing.Size(200, 200);
             this.MinimumSize = new System.Drawing.Size(200, 200);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome";
             this.Load += new System.EventHandler(this.Form1_Load);
